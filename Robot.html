@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Are You a Robot?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #282c34;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #61dafb;
+            border-radius: 10px;
+            padding: 50px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            color: #282c34;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #282c34;
+            color: #61dafb;
+            border: none;
+            border-radius: 5px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #61dafb;
+            color: #282c34;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Are You a Robot?</h1>
+        <button id="robotCheck">Click Me!</button>
+    </div>
+
+    <script>
+        document.getElementById("robotCheck").addEventListener("click", function() {
+            if (/Mobi|Android/i.test(navigator.userAgent)) {
+                // Redirect to mobile.html if on mobile
+                window.location.href = "mobile.html";
+            } else {
+                // Redirect to pc.html if on PC
+                window.location.href = "pc.html";
+            }
+        });
+    </script>
+</body>
+</html>
